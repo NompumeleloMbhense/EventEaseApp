@@ -1,0 +1,56 @@
+@page "/register"
+@using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventEaseApp.Services.UserSessionState SessionState
+@inject AttendanceTrackerService AttendanceService
+
+
+<h3 class="text-xl font-bold mb-4">User Registration</h3>
+
+<EditForm Model="registration" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Name:</label><br />
+        <InputText @bind-Value="registration.Name" class="border p-1 w-full" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label><br />
+        <InputText @bind-Value="registration.Email" class="border p-1 w-full" />
+    </div>
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Register</button>
+</EditForm>
+
+@if (submitted)
+{
+    <p class="mt-4 text-green-600">Thank you, @registration.Name! Registration complete.</p>
+}
+
+@code
+{
+    private UserRegistrationModel registration = new();
+    private bool submitted = false;
+
+    private void HandleSubmit()
+    {
+        submitted = true;
+
+        // Save registration data to session state 
+        SessionState.UserName = registration.Name;
+        SessionState.Email = registration.Email;
+
+        // Register attendance for EventId
+        AttendanceService.RegisterAttendance(
+            eventId:1,
+            UserName:registration.Name,
+            email:registration.Email
+        );
+
+
+        //Reset the form
+        registration = new();
+    }
+}

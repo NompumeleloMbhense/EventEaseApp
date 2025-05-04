@@ -1,0 +1,24 @@
+﻿@page "/"
+@using EventEaseApp.Models
+@using EventEaseApp.Pages
+@inject EventEaseApp.Services.UserSessionState SessionState
+
+@if (!string.IsNullOrEmpty(SessionState.UserName))
+{
+    <p>Welcome back, @SessionState.UserName!</p>
+}
+
+<h1 class="text-2xl font-bold mb-4">Upcoming Events</h1>
+
+@foreach (var evt in Events)
+{
+    <EventCard Event="evt" />
+}
+
+@code {
+    private List<EventModel> Events = new()
+    {
+        new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
+        new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
+    };
+}

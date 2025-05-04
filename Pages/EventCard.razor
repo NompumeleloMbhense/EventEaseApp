@@ -1,0 +1,16 @@
+<!--Pages/EventCard.razor-->
+@using EventEaseApp.Models;
+
+<div class="event-card border rounded p-4 shadow hover:shadow-lg transition">
+    <h3 class="text-xl font-bold">@Event.Name</h3>
+    <p><strong>Date:</strong> @Event.Date.ToShortDateString()</p>
+    <p><strong>Location:</strong> @Event.Location</p>
+    <a class="text-blue-500 hover:underline" href="/eventdetails/@Event.Id">View Details</a>
+</div>
+
+@code{
+    [Parameter]
+    public EventModel Event {get; set;}
+
+}    
+
