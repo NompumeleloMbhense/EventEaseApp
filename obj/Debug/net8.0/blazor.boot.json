@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "EventEaseApp",
   "resources": {
-    "hash": "sha256-B9XZ84N4gDeWw5UqXpO2dbNzbFKoHFuZqfn2b9+hylM=",
+    "hash": "sha256-UVIlhkdw29fOAJUSYTsLpQM2zI9dY04elxPUdabuACk=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.8s65sgr5kh.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-KvqZaNpjwhrOuzE4b4aMFsI+VUTyiWfoDI4zn4l9BM8=",
       "netstandard.wasm": "sha256-v+s7sWxtOM6bnOvC0jFrtnm6uMfbDymwl2nHNgbS2LM=",
       "System.Private.CoreLib.wasm": "sha256-pklll63uFQoY6vaD3vbluS9osYiJWLLLmob1yHFgepI=",
-      "EventEaseApp.wasm": "sha256-SLu17wMrVUfE2Imbulu3XRnmLkiRx/+1zBb+kUduSUM="
+      "EventEaseApp.wasm": "sha256-2e0iVcifoAncLlwpa/EVZEFwk0lV1fPTX9fNyFaoTe8="
     },
     "pdb": {
-      "EventEaseApp.pdb": "sha256-8j7H7MEu7aiHn6kIgOA3Mp/kc+D6KGJKkq47EfCILrg="
+      "EventEaseApp.pdb": "sha256-/CGefJRhvS28RT/e2O4q1aRZG/GywpcS/sypqamQS14="
     }
   },
   "cacheBootResources": true,

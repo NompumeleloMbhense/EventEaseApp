@@ -5,10 +5,10 @@
 
 @if (!string.IsNullOrEmpty(SessionState.UserName))
 {
-    <p>Welcome back, @SessionState.UserName!</p>
+    <p>Welcome back, <strong>@SessionState.UserName!</strong></p>
 }
 
-<h1 class="text-2xl font-bold mb-4">Upcoming Events</h1>
+<h1>Upcoming Events</h1>
 
 @foreach (var evt in Events)
 {

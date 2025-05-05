@@ -3,9 +3,92 @@
 @using EventEaseApp.Services
 @inject AttendanceTrackerService AttendanceService
 
+<style>
+    .event-container {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 2rem auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #1f2937;
+    }
 
-@code
+    h1 {
+        font-size: 2rem;
+        color: #f43f5e;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        color: #f97316;
+    }
+
+    h3 {
+        margin-top: 2rem;
+        color: #eab308;
+        /* accent */
+    }
+
+    .attendee-list {
+        padding: 0;
+        list-style: none;
+    }
+
+    .attendee-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    a {
+        color: #f43f5e;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+
+@if (selectedEvent != null)
 {
+
+    var attendees = AttendanceService.GetAttendeesForEvent(selectedEvent.Id);
+
+    <div class="event-container">
+        <h1>Event Details</h1>
+        <h2>@selectedEvent.Name</h2>
+        <p><strong>Date:</strong> @selectedEvent.Date.ToShortDateString()</p>
+        <p><strong>Location:</strong> @selectedEvent.Location</p>
+
+        @if (attendees.Any())
+        {
+            <h3>Attendees:</h3>
+            <p>List of attendees for this event:</p>
+            <ul class="attendee-list">
+                @foreach (var person in attendees)
+                {
+                    <li style="list-style-type: none;">@person.UserName - @person.Email</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No attendees yet</p>
+        }
+    </div>
+}
+else
+{
+    <p>Event not found.</p>
+    <a href="/">Go back to events list</a>
+}
+
+@code{
     [Parameter]
     public int id { get; set; }
 
@@ -22,31 +105,5 @@
 
         selectedEvent = events.FirstOrDefault(e => e.Id == id);
     }
-}
-
-@if (selectedEvent != null)
-{
-
-    var attendees = AttendanceService.GetAttendeesForEvent(selectedEvent.Id);
-
-    @if(attendees.Any())
-    {
-        <ul>
-            @foreach(var person in attendees){
-                <li>@person.UserName (@person.Email)</li>
-            }
-        </ul>
-    }else{
-        <p>No attendees yet</p>
-    }
-
-    <h2>@selectedEvent.Name</h2>
-    <p><strong>Date:</strong> @selectedEvent.Date.ToShortDateString()</p>
-    <p><strong>Location:</strong> @selectedEvent.Location</p>
-}
-else
-{
-    <p class="text-red-600">Event not found.</p>
-    <a href="/" class="text-blue-500 underline">Go back to events list</a>
 }
 
