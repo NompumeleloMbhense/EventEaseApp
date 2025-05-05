@@ -1,0 +1,83 @@
+@inherits LayoutComponentBase
+<style>
+    body {
+        background-color: #fff7ed;
+        color: #1f2937;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .nav-link {
+        color: #fff7ed;
+        margin-right: 1rem;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        display: inline-block;
+        transition: color 0.3s, border-color 0.3s
+    }
+
+    .nav-link:hover {
+        color: #f97316;
+        border-bottom: 2px solid #eab308;
+    }
+
+    .active-link {
+        color: #eab308;
+        border-bottom: 2px solid white;
+        font-weight: bold;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    header {
+        background-color: #f43f5e;
+        color: #fff7ed;
+        padding: 1rem;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    main {
+        flex: 1;
+        padding: 1rem;
+        background-color: #fff7ed;
+    }
+
+    footer {
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+</style>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+    <!--Header-->
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>EventEase</h1>
+            <nav>
+                <NavLink href="/" Match="NavLinkMatch.All" class="nav-link" activeClass="active-link">Home</NavLink>
+                <NavLink href="/eventdetails/1" class="nav-link" activeClass="active-link">Events</NavLink>
+                <NavLink href="/register" class="nav-link" activeClass="active-link">Register</NavLink>
+            </nav>
+        </div>
+    </header>
+
+    <!--Main Content-->
+    <main style="flex: 1; padding: 1rem;">
+        @Body
+    </main>
+
+    <!--Footer-->
+    <footer>
+        &copy; @DateTime.Now.Year EventEase. All rights reserved.
+    </footer>
+</div>

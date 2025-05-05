@@ -1029,3 +1029,4 @@ C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\refint\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.pdb
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\ref\EventEaseApp.dll
+C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.sourcelink.json
