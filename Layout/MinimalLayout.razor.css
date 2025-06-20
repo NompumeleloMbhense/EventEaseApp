@@ -1,0 +1,33 @@
+/* Navbar Styling */
+.navbar-gradient {
+    background: linear-gradient(90deg, #ec7d38, #fa8658); /* Indigo to navy */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-gradient .nav-link {
+    color: #f8f9fa;
+    transition: color 0.3s ease;
+}
+
+.navbar-gradient .nav-link:hover,
+.navbar-gradient .nav-link.active {
+    color: #ffd700; /* Gold on hover/active */
+}
+
+/* Footer Styling */
+.footer-custom {
+    background-color:#ec7d38;
+    color: #ffffff;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ffa14f;
+}
+
+.footer-custom a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}

@@ -26,18 +26,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nsmbh/Projects/EventEaseApp/Layout/MinimalLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1pbmltYWxMYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nsmbh/Projects/EventEaseApp/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nsmbh/Projects/EventEaseApp/Pages/EventCard.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDYXJkLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nsmbh/Projects/EventEaseApp/Pages/EventDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,18 +42,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclJlZ2lzdHJhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nsmbh/Projects/EventEaseApp/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nsmbh/Projects/EventEaseApp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nsmbh/Projects/EventEaseApp/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-uuqduv80zi
+[C:/Users/nsmbh/Projects/EventEaseApp/Layout/MinimalLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1pbmltYWxMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-nqm67do5up
 
-[C:/Users/nsmbh/Projects/EventEaseApp/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-pq9xlegf1q
+[C:/Users/nsmbh/Projects/EventEaseApp/Pages/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-zilo07w6nw

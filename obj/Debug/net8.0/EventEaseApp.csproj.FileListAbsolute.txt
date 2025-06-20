@@ -816,10 +816,7 @@ C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\staticwebassets\msbuild.bu
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EventEaseApp.props
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EventEaseApp.props
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Layout\MainLayout.razor.rz.scp.css
-C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Layout\NavMenu.razor.rz.scp.css
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\bundle\EventEaseApp.styles.css
-C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\projectbundle\EventEaseApp.bundle.scp.css
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\compressed\m40kkcvj55.gz
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\compressed\zkuu5rlatv.gz
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\compressed\zknh7j1t1c.gz
@@ -1030,3 +1027,6 @@ C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\refint\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.pdb
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\ref\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.sourcelink.json
+C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Layout\MinimalLayout.razor.rz.scp.css
+C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\projectbundle\EventEaseApp.bundle.scp.css
+C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Pages\EventCard.razor.rz.scp.css
