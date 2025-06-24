@@ -3,34 +3,33 @@
 @using EventEaseApp.Services
 
 
-
-<h3 class="text-2xl font-bold mb-4">Register a New Event</h3>
+<h3 class="event-form-title">Register a New Event</h3>
 
 <EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <div class="mb-2">
-        <label>Name:</label><br />
-        <InputText @bind-Value="newEvent.Name" class="border p-1 w-full" />
+    <div class="event-form-label">
+        <label>Name:</label>
+        <InputText @bind-Value="newEvent.Name" class="event-form-input" />
     </div>
 
-    <div class="mb-2">
-        <label>Date:</label><br />
-        <InputDate @bind-Value="newEvent.Date" class="border p-1 w-full" />
+    <div class="event-form-label">
+        <label>Date:</label>
+        <InputDate @bind-Value="newEvent.Date" class="event-form-input" />
     </div>
 
-    <div class="mb-2">
-        <label>Location:</label><br />
-        <InputText @bind-Value="newEvent.Location" class="border p-1 w-full" />
+    <div class="event-form-label">
+        <label>Location:</label>
+        <InputText @bind-Value="newEvent.Location" class="event-form-input" />
     </div>
 
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+    <button type="submit" class="btn btn-warning text-white fw-bold">Submit</button>
 </EditForm>
 
 @if (submitted)
 {
-    <p class="text-green-600 mt-4">Event <strong>@newEvent.Name</strong> registered successfully!</p>
+    <p class="text-success mt-3">Event <strong>@newEvent.Name</strong> registered successfully!</p>
 }
 
 
@@ -47,8 +46,6 @@
     {
         submitted = true;
 
-        // For now, just print to console or display success message.
-        // Later: Save to database or pass to a shared service.
         Console.WriteLine($"Event registered: {newEvent.Name}, {newEvent.Date}, {newEvent.Location}");
     }
 }

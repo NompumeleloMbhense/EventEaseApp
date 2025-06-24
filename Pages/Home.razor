@@ -8,17 +8,24 @@
     <p>Welcome back <strong>@SessionState.UserName</strong></p>
 }
 
-<h1>Upcoming Events</h1>
+<div class="home-container">
+    <h1>Upcoming Events</h1>
+    <p>Stay on top of your event schedule and attendee activity</p>
+</div>
 
-@foreach (var evt in Events)
-{
-    <EventCard Event="evt" />
-}
 
-@code {
-    private List<EventModel> Events = new()
+<div class="event-grid">
+    @foreach (var evt in Events)
     {
-        new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
-        new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
-    };
+        <EventCard Event="evt" />
+    }
+</div>
+
+@code
+{
+    private List<EventModel> Events = new()
+{
+new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
+new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
+};
 }
