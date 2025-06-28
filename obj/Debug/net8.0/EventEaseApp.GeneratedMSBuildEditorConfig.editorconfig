@@ -30,8 +30,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnREZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nsmbh/Projects/EventEaseApp/Pages/UserRegistration.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclJlZ2lzdHJhdGlvbi5yYXpvcg==
+[C:/Users/nsmbh/Projects/EventEaseApp/Pages/FormCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybUNhcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nsmbh/Projects/EventEaseApp/_Imports.razor]
@@ -53,3 +53,7 @@ build_metadata.AdditionalFiles.CssScope = b-u1c8sr9b5g
 [C:/Users/nsmbh/Projects/EventEaseApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-2i908hv98z
+
+[C:/Users/nsmbh/Projects/EventEaseApp/Pages/UserRegistration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclJlZ2lzdHJhdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-8m0nid4c9l

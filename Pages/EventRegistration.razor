@@ -2,39 +2,42 @@
 @using EventEaseApp.Models
 @using EventEaseApp.Services
 
+<div class="form-card">
+    <h3 class="form-title">Register a New Event</h3>
 
-<h3 class="event-form-title">Register a New Event</h3>
+    <EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="error-summary" />
 
-<EditForm Model="newEvent" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+        <div class="form-group">
+            <label class="form-label">Name:</label>
+            <InputText @bind-Value="newEvent.Name" class="form-input" />
+        </div>
 
-    <div class="event-form-label">
-        <label>Name:</label>
-        <InputText @bind-Value="newEvent.Name" class="event-form-input" />
-    </div>
+        <div class="form-group">
+            <label class="form-label">Date:</label>
+            <div class="date-picker-wrapper">
+                <InputDate @bind-Value="newEvent.Date" class="form-input date-picker-input" />
+            </div>
+        </div>
 
-    <div class="event-form-label">
-        <label>Date:</label>
-        <InputDate @bind-Value="newEvent.Date" class="event-form-input" />
-    </div>
+        <div class="form-group">
+            <label class="form-label">Location:</label>
+            <InputText @bind-Value="newEvent.Location" class="form-input" />
+        </div>
 
-    <div class="event-form-label">
-        <label>Location:</label>
-        <InputText @bind-Value="newEvent.Location" class="event-form-input" />
-    </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </EditForm>
 
-    <button type="submit" class="btn btn-warning text-white fw-bold">Submit</button>
-</EditForm>
+    @if (submitted)
+    {
+        <p class="success-msg">Event <strong>@newEvent.Name</strong> registered successfully!</p>
+    }
+</div>
 
-@if (submitted)
+
+@code
 {
-    <p class="text-success mt-3">Event <strong>@newEvent.Name</strong> registered successfully!</p>
-}
-
-
-
-@code {
     private EventModel newEvent = new()
     {
         Date = DateTime.Today
@@ -49,4 +52,3 @@
         Console.WriteLine($"Event registered: {newEvent.Name}, {newEvent.Date}, {newEvent.Location}");
     }
 }
-

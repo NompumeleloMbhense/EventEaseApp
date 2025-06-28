@@ -1,0 +1,13 @@
+<!-- FormCard.razor -->
+<div class="form-card">
+  @if (!string.IsNullOrEmpty(Title))
+  {
+    <h3 class="form-title">@Title</h3>
+  }
+  @ChildContent
+</div>
+
+@code {
+  [Parameter] public string Title { get; set; }
+  [Parameter] public RenderFragment ChildContent { get; set; }
+}

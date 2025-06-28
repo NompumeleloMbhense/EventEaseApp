@@ -54,49 +54,116 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 /* /Pages/EventRegistration.razor.rz.scp.css */
-.event-form-title[b-u1c8sr9b5g] {
-    font-size: 2rem;
-    color: #ef6626;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #ffa14f;
-    padding-bottom: 0.5rem;
-    animation: slideFadeIn-b-u1c8sr9b5g 0.6s ease-out;
+.form-card[b-u1c8sr9b5g] {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff7ed;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-.event-form-label[b-u1c8sr9b5g] {
-    font-weight: 600;
-    color: #ef6626;
-    display: block;
-    margin-bottom: 0.25rem;
+.form-title[b-u1c8sr9b5g] {
+  font-size: 1.75rem;
+  color: #ef6626;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.event-form-input[b-u1c8sr9b5g] {
-    background-color: #fff7ed;
-    border: 1px solid #f1c299;
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #333;
+.error-summary[b-u1c8sr9b5g] {
+  background: #fdeaea;
+  border-left: 4px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  color: #a94442;
 }
 
-.event-form-input:focus[b-u1c8sr9b5g] {
-    border-color: #ec7d38;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(239, 102, 38, 0.2);
+.form-group[b-u1c8sr9b5g] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
 }
 
-@keyframes slideFadeIn-b-u1c8sr9b5g {
-    from {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.form-label[b-u1c8sr9b5g] {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #ef6626;
+}
+
+.form-input[b-u1c8sr9b5g] {
+  padding: 0.5rem;
+  border: 1px solid #f1c299;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus[b-u1c8sr9b5g] {
+  border-color: #ec7d38;
+  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
+  outline: none;
+}
+
+.date-picker-wrapper[b-u1c8sr9b5g] {
+  position: relative;
+  width: 100%;
+}
+
+.date-picker-input[b-u1c8sr9b5g] {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  border: 1px solid #f1c299;
+  border-radius: 4px;
+  background-color: #fff7ed;
+  font-size: 1rem;
+  color: #333;
+  /* Custom calendar icon (inline SVG) */
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23ef6626' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14a2 2 0 002-2V6c0-1.1-.9-2-2-2zM5 8v12h14V8H5zm2 3h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.date-picker-input:focus[b-u1c8sr9b5g] {
+  border-color: #ec7d38;
+  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
+  outline: none;
+}
+
+/* hide default picker icon in WebKit */
+.date-picker-input[b-u1c8sr9b5g]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ensure non-WebKit browsers don’t show their own button */
+.date-picker-input[b-u1c8sr9b5g]::-moz-focus-inner {
+  border: 0;
+}
+
+.submit-btn[b-u1c8sr9b5g] {
+  width: 100%;
+  background: #ef6626;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover[b-u1c8sr9b5g] {
+  background: #d4551f;
+}
+
+.success-msg[b-u1c8sr9b5g] {
+  margin-top: 1.5rem;
+  color: #2e7d32;
+  text-align: center;
+  font-weight: 500;
 }
 /* /Pages/Home.razor.rz.scp.css */
 .home-container h1[b-2i908hv98z] {
@@ -136,4 +203,79 @@
 .event-grid[b-2i908hv98z] {
     display: block;
     gap: 1rem;
+}
+/* /Pages/UserRegistration.razor.rz.scp.css */
+
+.form-card[b-8m0nid4c9l] {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff7ed;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-title[b-8m0nid4c9l] {
+  font-size: 1.75rem;
+  color: #ef6626;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group[b-8m0nid4c9l] {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-label[b-8m0nid4c9l] {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #ef6626;
+}
+
+.form-input[b-8m0nid4c9l] {
+  padding: 0.5rem;
+  border: 1px solid #f1c299;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus[b-8m0nid4c9l] {
+  border-color: #ec7d38;
+  box-shadow: 0 0 0 3px rgba(239,102,38,0.2);
+  outline: none;
+}
+
+.submit-btn[b-8m0nid4c9l] {
+  width: 100%;
+  background: #ef6626;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover[b-8m0nid4c9l] {
+  background: #d4551f;
+}
+
+.success-msg[b-8m0nid4c9l] {
+  margin-top: 1.5rem;
+  color: #2e7d32;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-summary[b-8m0nid4c9l] {
+  background: #fdeaea;
+  border-left: 4px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  color: #a94442;
 }
