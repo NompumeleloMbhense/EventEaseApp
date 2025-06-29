@@ -1,0 +1,21 @@
+@page "/events"
+@using EventEaseApp.Models
+
+<h1 class="mb-3">Browse Events</h1>
+
+<div class="event-grid">
+    @foreach (var evt in eventList)
+    {
+        <EventCard Event="evt" />
+    }
+</div>
+
+
+@code {
+     private List<EventModel> eventList = new()
+    {
+        new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
+        new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
+    };
+}
+

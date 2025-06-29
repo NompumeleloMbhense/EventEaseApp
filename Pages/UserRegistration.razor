@@ -26,7 +26,7 @@
 
     @if (submitted)
     {
-        <p class="success-msg">Thank you, @registration.Name! Registration complete.</p>
+        <p class="success-msg">Thank you, @SessionState.UserName! Registration complete.</p>
     }
 </div>
 
@@ -39,9 +39,11 @@
     {
         submitted = true;
 
-        // Save registration data to session state
+        // Save info to session
         SessionState.UserName = registration.Name;
         SessionState.Email = registration.Email;
+
+        Console.WriteLine($"User session set: {SessionState.UserName}, {SessionState.Email}");
 
         // Register attendance for EventId
         AttendanceService.RegisterAttendance(

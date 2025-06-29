@@ -3,29 +3,23 @@
 @using EventEaseApp.Pages
 @inject EventEaseApp.Services.UserSessionState SessionState
 
-@if (!string.IsNullOrEmpty(SessionState.UserName))
-{
-    <p>Welcome back <strong>@SessionState.UserName</strong></p>
-}
-
-<div class="home-container">
-    <h1>Upcoming Events</h1>
-    <p>Stay on top of your event schedule and attendee activity</p>
-</div>
-
-
-<div class="event-grid">
-    @foreach (var evt in Events)
+<div class="landing-container">
+    @if (!string.IsNullOrEmpty(SessionState.UserName))
     {
-        <EventCard Event="evt" />
+        <p class="welcome">Welcome back <strong>@SessionState.UserName</strong></p>
     }
-</div>
 
-@code
-{
-    private List<EventModel> Events = new()
-{
-new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
-new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
-};
-}
+    <h1 class="hero-title">Welcome to EventEase</h1>
+    <p class="hero-subtitle">Discover and track events and stay organized</p>
+
+    <a href="/events" class="btn-action">Browse Events</a>
+
+    <section class="features">
+        <h2>Why EventEase?</h2>
+        <ul>
+            <li><strong>Easy Browsing:</strong> View all upcoming events in one place</li>
+            <li><strong>Simple Registration:</strong> Register for your favorite events in seconds</li>
+            <li><strong>Stay Informed:</strong> See detailed info for each event you care about</li>
+        </ul>
+    </section>
+</div>
