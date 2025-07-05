@@ -1,11 +1,10 @@
-
 .form-card[b-8m0nid4c9l] {
   max-width: 400px;
   margin: 2rem auto;
   background: #fff7ed;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-title[b-8m0nid4c9l] {
@@ -27,7 +26,7 @@
   color: #ef6626;
 }
 
-.form-input[b-8m0nid4c9l] {
+input[class*="form-input"][b-8m0nid4c9l] {
   padding: 0.5rem;
   border: 1px solid #f1c299;
   border-radius: 4px;
@@ -35,10 +34,14 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-input:focus[b-8m0nid4c9l] {
+input[class*="form-input"]:focus[b-8m0nid4c9l] {
   border-color: #ec7d38;
-  box-shadow: 0 0 0 3px rgba(239,102,38,0.2);
+  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
   outline: none;
+}
+
+body[b-8m0nid4c9l] {
+  background-color: palevioletred;
 }
 
 .submit-btn[b-8m0nid4c9l] {

@@ -1,21 +1,34 @@
 @page "/events"
 @using EventEaseApp.Models
 
-<h1 class="mb-3">Browse Events</h1>
+<input type="text" @bind="searchTerm" placeholder="Search by name or location" class="form-control mb-4" />
 
-<div class="event-grid">
-    @foreach (var evt in eventList)
-    {
-        <EventCard Event="evt" />
-    }
+<div class="browse-events-container">
+    <h1 class="browse-heading">Browse Events</h1>
+    <p class="browse-subtext">Explore all upcoming events and find what interests you.</p>
+
+    <div class="event-grid">
+        @foreach (var evt in FilteredEvents)
+        {
+            <EventCard Event="evt" />
+        }
+    </div>
 </div>
 
 
-@code {
-     private List<EventModel> eventList = new()
-    {
-        new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
-        new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
-    };
-}
+@code
+{
+    private string searchTerm = "";
+    private List<EventModel> eventList = new()
+{
+new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
+new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
+};
 
+    private IEnumerable<EventModel> FilteredEvents =>
+    string.IsNullOrWhiteSpace(searchTerm)
+    ? eventList
+    : eventList.Where(e => e.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+    e.Location.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+
+}

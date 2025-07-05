@@ -1,52 +1,38 @@
 @page "/eventdetails/{id:int}"
 @using EventEaseApp.Models
 @using EventEaseApp.Services
-@inject AttendanceTrackerService AttendanceService
+
 
 @if (selectedEvent != null)
 {
-    <h1>Event Details</h1>
+    <div class="event-details-container">
+        <h1 class="event-details-title">Event Details</h1>
 
-    <EventCard Event="selectedEvent" />
-
-    var attendees = AttendanceService.GetAttendeesForEvent(selectedEvent.Id);
-
-
-    @if (attendees.Any())
-    {
-        <h3>Attendees:</h3>
-        <p>List of attendees for this event:</p>
-        <ul class="attendee-list">
-            @foreach (var person in attendees)
-            {
-                <li style="list-style-type: none;">@person.UserName - @person.Email</li>
-            }
-        </ul>
-    }
-    else
-    {
-        <p>No attendees yet</p>
-    }
+        <EventCard Event="selectedEvent" />
+        
+    </div>
 }
 else
 {
-    <p>Event not found.</p>
-    <a href="/">Go back to events list</a>
+    <div class="event-not-found">
+        <p> Event not found.</p>
+        <a href="/" class="back-link">← Go back to events list</a>
+    </div>
 }
 
-@code
-{
+@code {
     [Parameter]
     public int id { get; set; }
     private EventModel? selectedEvent;
+    
     protected override void OnInitialized()
     {
-
         var events = new List<EventModel>
         {
             new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
             new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
         };
+
 
         selectedEvent = events.FirstOrDefault(e => e.Id == id);
     }

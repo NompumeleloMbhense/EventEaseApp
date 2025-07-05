@@ -51,7 +51,43 @@
 
 .event-card:hover[b-zilo07w6nw] {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
+}
+/* /Pages/EventDetails.razor.rz.scp.css */
+.event-details-container[b-sg3a370zgc] {
+    background-color: #fff7ed;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.event-details-title[b-sg3a370zgc] {
+    font-size: 2rem;
+    color: #f43f5e;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f97316;
+    padding-bottom: 0.5rem;
+}
+
+.event-not-found[b-sg3a370zgc] {
+    padding: 2rem;
+    background-color: #fff3f3;
+    border: 1px solid #f43f5e;
+    border-radius: 8px;
+    color: #b91c1c;
+}
+
+.back-link[b-sg3a370zgc] {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.back-link:hover[b-sg3a370zgc] {
+    text-decoration: underline;
 }
 /* /Pages/EventRegistration.razor.rz.scp.css */
 .form-card[b-u1c8sr9b5g] {
@@ -165,6 +201,54 @@
   text-align: center;
   font-weight: 500;
 }
+/* /Pages/Events.razor.rz.scp.css */
+.search-box[b-q6y77nab7d] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #f97316;      
+    border-radius: 6px;
+    background-color: #fff7ed;       
+    color: #1f2937;                  
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box[b-q6y77nab7d]::placeholder {
+    color: #9ca3af; 
+}
+
+.search-box:focus[b-q6y77nab7d] {
+    outline: none;
+    border-color: #eab308; 
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.3); 
+}
+
+.browse-events-container[b-q6y77nab7d] {
+    padding: 1rem;
+    background: #fff7ed;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.browse-heading[b-q6y77nab7d] {
+    font-size: 2rem;
+    color: #ec7d38;
+    margin-bottom: 0.5rem;
+    border-bottom: 3px solid #f97316;
+    display: inline-block;
+}
+
+.browse-subtext[b-q6y77nab7d] {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.event-grid[b-q6y77nab7d] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
 /* /Pages/Home.razor.rz.scp.css */
 .landing-container[b-2i908hv98z] {
     max-width: 800px;
@@ -225,14 +309,13 @@
     border-radius: 4px;
 }
 /* /Pages/UserRegistration.razor.rz.scp.css */
-
 .form-card[b-8m0nid4c9l] {
   max-width: 400px;
   margin: 2rem auto;
   background: #fff7ed;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-title[b-8m0nid4c9l] {
@@ -254,7 +337,7 @@
   color: #ef6626;
 }
 
-.form-input[b-8m0nid4c9l] {
+input[class*="form-input"][b-8m0nid4c9l] {
   padding: 0.5rem;
   border: 1px solid #f1c299;
   border-radius: 4px;
@@ -262,10 +345,14 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-input:focus[b-8m0nid4c9l] {
+input[class*="form-input"]:focus[b-8m0nid4c9l] {
   border-color: #ec7d38;
-  box-shadow: 0 0 0 3px rgba(239,102,38,0.2);
+  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
   outline: none;
+}
+
+body[b-8m0nid4c9l] {
+  background-color: palevioletred;
 }
 
 .submit-btn[b-8m0nid4c9l] {
