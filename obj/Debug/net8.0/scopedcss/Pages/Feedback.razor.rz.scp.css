@@ -1,4 +1,4 @@
-.form-card[b-u1c8sr9b5g] {
+.form-card[b-222vjxqprq] {
   max-width: 400px;
   margin: 2rem auto;
   background: #fff7ed;
@@ -7,14 +7,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.form-title[b-u1c8sr9b5g] {
+.form-title[b-222vjxqprq] {
   font-size: 1.75rem;
   color: #ef6626;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.error-summary[b-u1c8sr9b5g] {
+.error-summary[b-222vjxqprq] {
   background: #fdeaea;
   border-left: 4px solid #f5c6cb;
   border-radius: 4px;
@@ -23,19 +23,19 @@
   color: #a94442;
 }
 
-.form-group[b-u1c8sr9b5g] {
+.form-group[b-222vjxqprq] {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.25rem;
 }
 
-.form-label[b-u1c8sr9b5g] {
+.form-label[b-222vjxqprq] {
   font-weight: 600;
   margin-bottom: 0.25rem;
   color: #ef6626;
 }
 
-.form-input[b-u1c8sr9b5g] {
+.form-input[b-222vjxqprq] {
   padding: 0.5rem;
   border: 1px solid #f1c299;
   border-radius: 4px;
@@ -43,18 +43,18 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-input:focus[b-u1c8sr9b5g] {
+.form-input:focus[b-222vjxqprq] {
   border-color: #ec7d38;
   box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
   outline: none;
 }
 
-.date-picker-wrapper[b-u1c8sr9b5g] {
+.date-picker-wrapper[b-222vjxqprq] {
   position: relative;
   width: 100%;
 }
 
-.date-picker-input[b-u1c8sr9b5g] {
+.date-picker-input[b-222vjxqprq] {
   width: 100%;
   padding: 0.5rem 2.5rem 0.5rem 0.75rem;
   border: 1px solid #f1c299;
@@ -70,24 +70,24 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.date-picker-input:focus[b-u1c8sr9b5g] {
+.date-picker-input:focus[b-222vjxqprq] {
   border-color: #ec7d38;
   box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
   outline: none;
 }
 
 /* hide default picker icon in WebKit */
-.date-picker-input[b-u1c8sr9b5g]::-webkit-calendar-picker-indicator {
+.date-picker-input[b-222vjxqprq]::-webkit-calendar-picker-indicator {
   opacity: 0;
   cursor: pointer;
 }
 
 /* ensure non-WebKit browsers don’t show their own button */
-.date-picker-input[b-u1c8sr9b5g]::-moz-focus-inner {
+.date-picker-input[b-222vjxqprq]::-moz-focus-inner {
   border: 0;
 }
 
-.submit-btn[b-u1c8sr9b5g] {
+.submit-btn[b-222vjxqprq] {
   width: 100%;
   background: #ef6626;
   color: #fff;
@@ -99,11 +99,11 @@
   transition: background 0.2s;
 }
 
-.submit-btn:hover[b-u1c8sr9b5g] {
+.submit-btn:hover[b-222vjxqprq] {
   background: #d4551f;
 }
 
-.success-msg[b-u1c8sr9b5g] {
+.success-msg[b-222vjxqprq] {
   margin-top: 1.5rem;
   color: #2e7d32;
   text-align: center;

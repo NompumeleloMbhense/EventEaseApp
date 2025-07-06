@@ -17,8 +17,8 @@ namespace EventEaseApp.Models
         public DateTime Date { get; set; } = DateTime.Today;
 
         [Required(ErrorMessage = "Location is required")]
-        [StringLength(100, ErrorMessage = "Event name cannot be longer that 100 characters")]
-        [MinLength(3, ErrorMessage = "Event name must be at least 3 characters")]
+        [StringLength(100, ErrorMessage = "Event location cannot be longer that 100 characters")]
+        [MinLength(3, ErrorMessage = "Event location must be at least 3 characters")]
         [RegularExpression("^[a-zA-Z0-9\\s\\-']+$", ErrorMessage = "Invalid location format")]
         public string Location { get; set; } = string.Empty;
     }

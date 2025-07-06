@@ -1,0 +1,50 @@
+@page "/feedback"
+@using EventEaseApp.Models
+
+<div class="form-card">
+    <h3 class="form-title">We Value Your Feedback</h3>
+
+    <EditForm Model="feedback" OnValidSubmit="HandleSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="error-summary" />
+
+        <div class="form-group">
+            <label class="form-label">Name:</label>
+            <InputText @bind-Value="feedback.Name" class="form-input" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Email:</label>
+            <InputText @bind-Value="feedback.Email" class="form-input" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Message:</label>
+            <InputTextArea @bind-Value="feedback.Message" class="form-input" rows="5" />
+        </div>
+
+        <button type="submit" class="submit-btn">Send Feedback</button>
+    </EditForm>
+
+    @if (submitted)
+    {
+        <p class="success-msg">Thank you, <strong>@feedback.Name</strong>! We appreciate your thoughts.</p>
+    }
+</div>
+
+
+@code
+{
+    private FeedbackModel feedback = new();
+
+    private bool submitted = false;
+
+    private void HandleSubmit()
+    {
+        submitted = true;
+
+        Console.WriteLine($"Feedback from {feedback.Name}: {feedback.Message}");
+
+        feedback = new(); // Reset form
+    }
+}
