@@ -1,0 +1,165 @@
+@* Manage Events page is for the event owner or admin*@
+@page "/manage-events"
+@using EventEaseApp.Models
+@inject EventEaseApp.Services.EventService EventService
+@inject EventEaseApp.Services.AdminState AdminState
+
+
+@if (!AdminState.IsLoggedIn)
+{
+    <!-- Login form -->
+    <div class="login-box">
+        <h3>Admin Login</h3>
+        <input @bind="password" type="password" placeholder="Enter admin password" class="form-control mb-2" />
+        <button class="btn btn-primary" @onclick="TryLogin">Login</button>
+        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        {
+            <p class="text-danger mt-2">@errorMessage</p>
+        }
+    </div>
+}
+else
+{
+    <!-- Admin interface -->
+    <div>
+        <h3 class="text-orange">Manage Events</h3>
+        <button class="btn btn-sm btn-outline-danger mb-3" @onclick="Logout">Logout</button>
+
+        <!-- Placeholder for event management UI -->
+        <p>You're now logged in</p>
+
+        <div class="form-card">
+            <h4>@(editingEvent.Id == 0 ? "Add New Event" : "Edit Event")</h4>
+
+            <EditForm Model="editingEvent" OnValidSubmit="SaveEvent">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="form-group">
+                    <label>Name:</label>
+                    <InputText class="form-control" @bind-Value="editingEvent.Name" />
+                </div>
+
+                <div class="form-group">
+                    <label>Date:</label>
+                    <InputDate class="form-control" @bind-Value="editingEvent.Date" />
+                </div>
+
+                <div class="form-group">
+                    <label>Location:</label>
+                    <InputText class="form-control" @bind-Value="editingEvent.Location" />
+                </div>
+
+                <button class="btn btn-success me-2" type="submit" >Save</button>
+                @if (editingEvent.Id != 0)
+                {
+                    <button type="button" class="btn btn-outline-secondary" @onclick="CancelEdit">Cancel</button>
+                }
+            </EditForm>
+        </div>
+
+        <h4 class="text-orange mt-4" >Current Events</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var evt in events)
+                {
+                    <tr>
+                        <td>@evt.Name</td>
+                        <td>@evt.Date.ToShortDateString()</td>
+                        <td>@evt.Location</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-2" @onclick="@(() => EditEvent(evt))">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger"
+                                @onclick="@(() => DeleteEvent(evt.Id))">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+
+
+
+@code
+{
+    private string password = "";
+    private string errorMessage = "";
+
+    private List<EventModel> events = new();
+    private EventModel editingEvent = new();
+
+    protected override void OnInitialized()
+    {
+        LoadEvents();
+    }
+
+     private void LoadEvents()
+    {
+        events = EventService.GetEvents();
+    }
+
+     private void SaveEvent()
+    {
+        if (editingEvent.Id == 0)
+        {
+            EventService.AddEvent(editingEvent);
+        }
+        else
+        {
+            EventService.UpdateEvent(editingEvent);
+        }
+
+        editingEvent = new();
+        LoadEvents();
+    }
+
+    private void EditEvent(EventModel evt)
+    {
+        editingEvent = new EventModel
+        {
+            Id = evt.Id,
+            Name = evt.Name,
+            Date = evt.Date,
+            Location = evt.Location
+        };
+    }
+
+    private void DeleteEvent(int id)
+    {
+        EventService.DeleteEvent(id);
+        LoadEvents();
+    }
+
+    private void CancelEdit()
+    {
+        editingEvent = new();
+    }
+
+
+    private void TryLogin()
+    {
+        AdminState.Login(password);
+
+        if (!AdminState.IsLoggedIn)
+        {
+            errorMessage = "Incorrect password.";
+        }
+    }
+
+    private void Logout()
+    {
+        AdminState.Logout();
+        password = "";
+        errorMessage = "";
+    }
+}

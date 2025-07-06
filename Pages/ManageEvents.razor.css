@@ -1,0 +1,178 @@
+/*h2 {
+  color: #f43f5e;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f97316;
+  padding-bottom: 0.25rem;
+}
+
+.event-form {
+  background-color: #fff7ed;
+  border-left: 4px solid #f97316;
+}
+
+.event-form h4 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  border: 1px solid #f1c299 !important;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.form-control:focus {
+  border-color: #f43f5e !important;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.2);
+  outline: none;
+}
+
+button.btn-primary {
+  background-color: #f43f5e;
+  border: none;
+}
+
+button.btn-primary:hover {
+  background-color: #d6364f;
+}
+
+button.btn-outline-primary {
+  color: #f43f5e;
+  border-color: #f43f5e;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #f43f5e;
+  color: #fff;
+}
+
+button.btn-outline-danger {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+button.btn-outline-danger:hover {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+button.btn-secondary {
+  background-color: #eab308;
+  color: #1f2937;
+  border: none;
+}
+
+button.btn-secondary:hover {
+  background-color: #d4a207;
+}
+
+table th {
+  background-color: #fff7ed;
+  color: #1f2937;
+}
+
+table td {
+  vertical-align: middle;
+}*/
+
+.login-box {
+  max-width: 300px;
+  margin: 2rem auto;
+  background-color: #fff7ed;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-box h3 {
+  color: #ef6626;
+  margin-bottom: 1rem;
+}
+
+.login-box input {
+  border: 1px solid #ffa14f;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-box button {
+  background-color: #ef6626;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #d4551f;
+}
+
+/*Admin Panel*/
+.form-card {
+  background-color: #fff7ed;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.form-card h4 {
+  color: #ef6626;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #ef6626;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control {
+  padding: 0.5rem;
+  border: 1px solid #ffa14f;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn-success {
+  background-color: #ef6626;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #d4551f;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #ffa14f;
+  color: #1f2937;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #fff2e0;
+}
