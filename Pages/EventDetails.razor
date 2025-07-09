@@ -8,15 +8,47 @@
     <div class="event-details-container">
         <h1 class="event-details-title">Event Details</h1>
 
-        <EventCard Event="selectedEvent" />
-        
+        @*<EventCard Event="selectedEvent" />*@
+
+        <div class="event-info">
+            <h2>@selectedEvent.Name</h2>
+            <p><strong>Date:</strong> @selectedEvent.Date.ToLongDateString()</p>
+            <p><strong>Location:</strong> @selectedEvent.Location</p>
+
+            @if (!string.IsNullOrWhiteSpace(selectedEvent.Description))
+            {
+                <p><strong>Description:</strong> @selectedEvent.Description</p>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(selectedEvent.Category))
+            {
+                <p><strong>Category:</strong> @selectedEvent.Category</p>
+            }
+
+            @if (selectedEvent.Tags?.Count > 0)
+            {
+                <p><strong>Tags:</strong></p>
+                <div class="card-tags">
+                    @foreach (var tag in selectedEvent.Tags)
+                    {
+                        <span class="tag">@tag</span>
+                    }
+                </div>
+            }
+
+            <!-- social share buttons and actions -->
+            <div class="share-buttons mt-4">
+                <a href="#" class="btn btn-sm btn-outline-primary">Share on Twitter</a>
+                <a href="#" class="btn btn-sm btn-outline-secondary ms-2">Share on Facebook</a>
+            </div>
+        </div>
     </div>
 }
 else
 {
     <div class="event-not-found">
         <p> Event not found.</p>
-        <a href="/" class="back-link">← Go back to events list</a>
+        <a href="/events" class="back-link">← Go back to events list</a>
     </div>
 }
 
@@ -29,8 +61,33 @@ else
     {
         var events = new List<EventModel>
         {
-            new EventModel { Id = 1, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" },
-            new EventModel { Id = 2, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" }
+            new EventModel {
+            Id = 1,
+            Name = "Tech Conference",
+            Date = new DateTime(2025, 6, 15),
+            Location = "Cape Town",
+            Description = "Join top minds in tech for talks and networking.",
+            Tags = new() { "Tech", "Conference", "Innovation" }, 
+            Category = "Technology"
+            },
+        new EventModel {
+            Id = 2,
+            Name = "Art Festival",
+            Date = new DateTime(2025, 7, 20),
+            Location = "Johannesburg",
+            Description = "Experience creativity in bloom, connect with visionary artists and explore captivating exhibitions",
+            Tags = new() { "Art", "Showcase", "Exhibition"},
+            Category = "Art"
+            },
+        new EventModel {
+            Id = 3,
+            Name = "Swan Lake",
+            Date = new DateTime(2025, 8, 9),
+            Location = "Durban",
+            Description = "Experience the magic of Swan Lake. Witness breathtaking ballet, enchanting music and a timeless tale of love and transformation come to life on stage.",
+            Tags = new() { "Ballet", "Dance", "Play"},
+            Category = "Theatre"
+            }
         };
 
 

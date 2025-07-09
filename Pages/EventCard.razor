@@ -7,7 +7,27 @@
             <h5 class="card-title">@Event.Name</h5>
             <p class="card-text"><strong>Date:</strong> @Event.Date.ToShortDateString()</p>
             <p class="card-text"><strong>Location:</strong> @Event.Location</p>
-            <a class="btn btn-outline-primary" href="/eventdetails/@Event.Id">View Details</a>
+
+            @if(!string.IsNullOrWhiteSpace(Event.Description))
+            {
+                <p class="card-description">@Event.Description</p>
+            }
+            @if(!string.IsNullOrWhiteSpace(Event.Category))
+            {
+                <p class="card-category"><strong>Category: </strong>@Event.Category</p>
+            }
+            @if(Event.Tags?.Count > 0)
+            {
+                <div class="card-tags">
+                    @foreach(var tag in Event.Tags)
+                    {
+                        <span class="tag">@tag</span>
+                    }
+                </div>
+            }
+
+
+            <a class="btn btn-outline-primary mt-2" href="/eventdetails/@Event.Id">View Details</a>
         </div>
     </div>
 </div>

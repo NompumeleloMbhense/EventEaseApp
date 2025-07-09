@@ -18,3 +18,30 @@
     transform: translateY(-5px);
     /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
 }
+
+.card-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 0.5rem;
+}
+
+.card-category {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #ef6626;
+    margin-top: 0.25rem;
+}
+
+.card-tags {
+    margin-top: 0.5rem;
+}
+
+.tag {
+    background-color: #f97316;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+    display: inline-block;
+}
