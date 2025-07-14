@@ -8,9 +8,8 @@ public class UserRegistrationModel
     public string Name { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "Email is required")]
-    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
-    [StringLength(100, MinimumLength = 2, ErrorMessage = "Name must be between 2 and 100")]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Email must include a valid domain (e.g., .com)")]
     public string Email { get; set; } = string.Empty;
-
 
 }

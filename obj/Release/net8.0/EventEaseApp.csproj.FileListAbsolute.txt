@@ -1036,3 +1036,6 @@ C:\Users\nsmbh\Projects\EventEaseApp\obj\Release\net8.0\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Release\net8.0\refint\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Release\net8.0\EventEaseApp.pdb
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Release\net8.0\ref\EventEaseApp.dll
+C:\Users\nsmbh\Projects\EventEaseApp\bin\Release\net8.0\dist\web.config
+C:\Users\nsmbh\Projects\EventEaseApp\bin\Release\net8.0\dist\wwwroot\sample-data\weather.json
+C:\Users\nsmbh\Projects\EventEaseApp\bin\Release\net8.0\dist\wwwroot\_framework\blazor.boot.json

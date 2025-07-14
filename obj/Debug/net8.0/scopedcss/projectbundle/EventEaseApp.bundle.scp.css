@@ -230,43 +230,6 @@
   outline: none;
 }
 
-.date-picker-wrapper[b-222vjxqprq] {
-  position: relative;
-  width: 100%;
-}
-
-.date-picker-input[b-222vjxqprq] {
-  width: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
-  border: 1px solid #f1c299;
-  border-radius: 4px;
-  background-color: #fff7ed;
-  font-size: 1rem;
-  color: #333;
-  /* Custom calendar icon (inline SVG) */
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23ef6626' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14a2 2 0 002-2V6c0-1.1-.9-2-2-2zM5 8v12h14V8H5zm2 3h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 1.25rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.date-picker-input:focus[b-222vjxqprq] {
-  border-color: #ec7d38;
-  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
-  outline: none;
-}
-
-/* hide default picker icon in WebKit */
-.date-picker-input[b-222vjxqprq]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* ensure non-WebKit browsers don’t show their own button */
-.date-picker-input[b-222vjxqprq]::-moz-focus-inner {
-  border: 0;
-}
 
 .submit-btn[b-222vjxqprq] {
   width: 100%;
@@ -282,13 +245,27 @@
 
 .submit-btn:hover[b-222vjxqprq] {
   background: #d4551f;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active[b-222vjxqprq] {
+    transform: translateY(0);
 }
 
 .success-msg[b-222vjxqprq] {
   margin-top: 1.5rem;
   color: #2e7d32;
   text-align: center;
-  font-weight: 500;
+  animation: fadeIn-b-222vjxqprq 0.5s ease-in-out;
+}
+
+@keyframes fadeIn-b-222vjxqprq {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* /Pages/Home.razor.rz.scp.css */
 .landing-container[b-2i908hv98z] {
@@ -589,6 +566,11 @@ body[b-8m0nid4c9l] {
 
 .submit-btn:hover[b-8m0nid4c9l] {
   background: #d4551f;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active[b-8m0nid4c9l] {
+    transform: translateY(0);
 }
 
 .success-msg[b-8m0nid4c9l] {
@@ -596,6 +578,16 @@ body[b-8m0nid4c9l] {
   color: #2e7d32;
   text-align: center;
   font-weight: 500;
+  animation: fadeIn-b-8m0nid4c9l 0.5s ease-in-out;
+}
+
+@keyframes fadeIn-b-8m0nid4c9l {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .error-summary[b-8m0nid4c9l] {
