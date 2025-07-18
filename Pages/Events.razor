@@ -8,17 +8,28 @@
     <p class="browse-subtext">Explore all upcoming events and find what interests you.</p>
 
     <div class="event-grid">
-        @foreach (var evt in FilteredEvents)
+        @foreach (var evt in PagedEvents)
         {
             <EventCard Event="evt" />
         }
     </div>
+
+    @if(TotalPages > 1)
+    {
+        <div class="pagination-controls">
+            <button class="btn btn-outline-secondary" @onclick="PreviousPage" disabled="@(_currentPage == 1)">← Previous</button>
+            <span class="page-info" >Page @_currentPage of @TotalPages</span>
+            <button class="btn btn-outline-secondary" @onclick="NextPage" disabled="@(_currentPage == TotalPages)">Next →</button>
+        </div>
+    }
 </div>
 
 
 @code
 {
     private string searchTerm = "";
+    private int _currentPage = 1;
+    private int _pageSize = 5;
     private List<EventModel> eventList = new()
     {
         new EventModel {
@@ -48,7 +59,9 @@
             Tags = new() { "Ballet", "Dance", "Play"},
             Category = "Theatre"
             },
-
+            new EventModel { Id = 4, Name = "Design Expo", Date = DateTime.Now.AddDays(20), Location = "Pretoria" },
+            new EventModel { Id = 5, Name = "Startup Grind", Date = DateTime.Now.AddDays(30), Location = "Cape Town" },
+            new EventModel { Id = 6, Name = "Food & Wine Fest", Date = DateTime.Now.AddDays(40), Location = "Stellenbosch" }
     };
 
     private IEnumerable<EventModel> FilteredEvents =>
@@ -57,4 +70,31 @@
     : eventList.Where(e => e.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
     e.Location.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
 
+    private int TotalPages => (int)Math.Ceiling(FilteredEvents.Count() / (double)_pageSize);
+
+    private IEnumerable<EventModel> PagedEvents => 
+        FilteredEvents
+        .Skip((_currentPage - 1) * _pageSize)
+        .Take(_pageSize);
+
+    private void NextPage()
+    {
+        if (_currentPage < TotalPages)
+        {
+            _currentPage++;
+        }
+    }
+
+    private void PreviousPage()
+    {
+        if (_currentPage > 1)
+        {
+            _currentPage--;
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        _currentPage = 1; // Reset to page 1 when arriving on the page or search term changes
+    }
 }

@@ -12,6 +12,17 @@
 .event-card {
     animation: fadeInUp 0.6s ease-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .event-card:hover {
@@ -19,10 +30,31 @@
     /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
 }
 
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bottom-button {
+    margin-top: auto !important;
+}
+
+
+
 .card-description {
     font-size: 0.95rem;
     color: #444;
     margin-top: 0.5rem;
+
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* show only 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-category {
@@ -34,6 +66,7 @@
 
 .card-tags {
     margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .tag {

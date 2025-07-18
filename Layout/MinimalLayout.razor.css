@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar-gradient {
-    background: linear-gradient(90deg, #ec7d38, #fa8658); /* Indigo to navy */
+    background: linear-gradient(90deg, #ec7d38, #fa8658); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 

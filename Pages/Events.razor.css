@@ -45,3 +45,20 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
 }
+
+.event-grid > * {
+    height: 100%;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.page-info {
+    font-weight: 500;
+    color: #ef6626;
+}
