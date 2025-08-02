@@ -1,23 +1,19 @@
 # EventEaseApp
 
-_EventEaseApp_ is a modern Blazor web application designed to streamline event registration and attendance tracking. Built with a clean, responsive UI and a lightweight user experience, it's ideal for organizers and attendees alike.
+_EventEaseApp_ is a responsive Blazor WebAssembly app for browsing and managing events. It features a clean UI, smooth animations and simple form validation.
 
 ## Features
 
-- Event creation with validation and animated feedback
-- User registration with session tracking
-- Custom-styled date picker for intuitive scheduling
-- Clean, warm visual design aligned with brand aesthetics
-- Seamless form flow using Blazor and C#
+- Browse events with name, date, location, description, and tags
+- Responsive layout
+- View event details with a clean and modern design
+- Optional feedback form after registration
+- Entry animations for a polished UI
 
 ## Tech Stack
 
-| Layer         | Technology               |
-|--------------|---------------------------|
-| Frontend      | Blazor WebAssembly        |
-| Styling       | Custom CSS, Bootstrap (optional) |
-| Backend Logic | C# (.NET 7/8), Dependency Injection |
-| State Mgmt    | Scoped services (`UserSessionState`) |
-| Data Layer    | In-memory (can be extended to EF Core) |
+- Blazor WebAssembly (.NET 8)
+- C# / Razor / Bootstrap
+- Custom CSS for styling & animations
 
-
+This is a personal portfolio project to showcase Blazor skills, UI design and responsive layout techniques.
