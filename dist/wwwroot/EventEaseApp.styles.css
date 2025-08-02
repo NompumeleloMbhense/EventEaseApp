@@ -1,7 +1,7 @@
 /* /Layout/MinimalLayout.razor.rz.scp.css */
 /* Navbar Styling */
 .navbar-gradient[b-nqm67do5up] {
-    background: linear-gradient(90deg, #ec7d38, #fa8658); /* Indigo to navy */
+    background: linear-gradient(90deg, #ec7d38, #fa8658); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -47,6 +47,17 @@
 .event-card[b-zilo07w6nw] {
     animation: fadeInUp-b-zilo07w6nw 0.6s ease-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card[b-zilo07w6nw] {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .event-card:hover[b-zilo07w6nw] {
@@ -54,10 +65,31 @@
     /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
 }
 
+
+.card-body[b-zilo07w6nw] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bottom-button[b-zilo07w6nw] {
+    margin-top: auto !important;
+}
+
+
+
 .card-description[b-zilo07w6nw] {
     font-size: 0.95rem;
     color: #444;
     margin-top: 0.5rem;
+
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* show only 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-category[b-zilo07w6nw] {
@@ -69,6 +101,7 @@
 
 .card-tags[b-zilo07w6nw] {
     margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .tag[b-zilo07w6nw] {
@@ -178,6 +211,23 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
 }
+
+.event-grid > *[b-q6y77nab7d] {
+    height: 100%;
+}
+
+.pagination-controls[b-q6y77nab7d] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.page-info[b-q6y77nab7d] {
+    font-weight: 500;
+    color: #ef6626;
+}
 /* /Pages/Feedback.razor.rz.scp.css */
 .form-card[b-222vjxqprq] {
   max-width: 400px;
@@ -230,43 +280,6 @@
   outline: none;
 }
 
-.date-picker-wrapper[b-222vjxqprq] {
-  position: relative;
-  width: 100%;
-}
-
-.date-picker-input[b-222vjxqprq] {
-  width: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
-  border: 1px solid #f1c299;
-  border-radius: 4px;
-  background-color: #fff7ed;
-  font-size: 1rem;
-  color: #333;
-  /* Custom calendar icon (inline SVG) */
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23ef6626' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14a2 2 0 002-2V6c0-1.1-.9-2-2-2zM5 8v12h14V8H5zm2 3h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 1.25rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.date-picker-input:focus[b-222vjxqprq] {
-  border-color: #ec7d38;
-  box-shadow: 0 0 0 3px rgba(239, 102, 38, 0.2);
-  outline: none;
-}
-
-/* hide default picker icon in WebKit */
-.date-picker-input[b-222vjxqprq]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* ensure non-WebKit browsers don’t show their own button */
-.date-picker-input[b-222vjxqprq]::-moz-focus-inner {
-  border: 0;
-}
 
 .submit-btn[b-222vjxqprq] {
   width: 100%;
@@ -282,13 +295,27 @@
 
 .submit-btn:hover[b-222vjxqprq] {
   background: #d4551f;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active[b-222vjxqprq] {
+    transform: translateY(0);
 }
 
 .success-msg[b-222vjxqprq] {
   margin-top: 1.5rem;
   color: #2e7d32;
   text-align: center;
-  font-weight: 500;
+  animation: fadeIn-b-222vjxqprq 0.5s ease-in-out;
+}
+
+@keyframes fadeIn-b-222vjxqprq {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* /Pages/Home.razor.rz.scp.css */
 .landing-container[b-2i908hv98z] {
@@ -589,6 +616,11 @@ body[b-8m0nid4c9l] {
 
 .submit-btn:hover[b-8m0nid4c9l] {
   background: #d4551f;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active[b-8m0nid4c9l] {
+    transform: translateY(0);
 }
 
 .success-msg[b-8m0nid4c9l] {
@@ -596,6 +628,16 @@ body[b-8m0nid4c9l] {
   color: #2e7d32;
   text-align: center;
   font-weight: 500;
+  animation: fadeIn-b-8m0nid4c9l 0.5s ease-in-out;
+}
+
+@keyframes fadeIn-b-8m0nid4c9l {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .error-summary[b-8m0nid4c9l] {

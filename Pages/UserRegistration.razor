@@ -2,23 +2,25 @@
 @using EventEaseApp.Models
 @using EventEaseApp.Services
 @inject EventEaseApp.Services.UserSessionState SessionState
-@inject AttendanceTrackerService AttendanceService
+
 
 <div class="form-card">
     <h3 class="form-title">User Registration</h3>
 
     <EditForm Model="registration" OnValidSubmit="HandleSubmit">
         <DataAnnotationsValidator />
-        <ValidationSummary class="error-summary" />
+        
 
         <div class="form-group">
             <label class="form-label">Name:</label>
             <InputText @bind-Value="registration.Name" class="form-input" />
+            <ValidationMessage For="@(() => registration.Name)" class="field-error"/>
         </div>
 
         <div class="form-group">
             <label class="form-label">Email:</label>
             <InputText @bind-Value="registration.Email" class="form-input" />
+            <ValidationMessage For="@(() => registration.Email)" class="field-error"/>
         </div>
 
         <button type="submit" class="submit-btn">Register User</button>
@@ -44,13 +46,6 @@
         SessionState.Email = registration.Email;
 
         Console.WriteLine($"User session set: {SessionState.UserName}, {SessionState.Email}");
-
-        // Register attendance for EventId
-        AttendanceService.RegisterAttendance(
-        eventId: 1,
-        UserName: registration.Name,
-        email: registration.Email
-        );
 
 
         //Reset the form

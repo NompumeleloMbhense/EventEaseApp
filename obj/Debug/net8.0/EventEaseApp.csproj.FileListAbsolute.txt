@@ -1034,10 +1034,11 @@ C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\EventEaseApp.pdb
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\ref\EventEaseApp.dll
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Pages\Events.razor.rz.scp.css
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Pages\EventDetails.razor.rz.scp.css
-C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Pages\ManageEvents.razor.rz.scp.css
 C:\Users\nsmbh\Projects\EventEaseApp\obj\Debug\net8.0\scopedcss\Pages\Feedback.razor.rz.scp.css
 C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\web.config
 C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\wwwroot\sample-data\weather.json
 C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\wwwroot\_framework\blazor.boot.json
 C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\dist\wwwroot\sample-data\weather.json
 C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\dist\wwwroot\_framework\blazor.boot.json
+C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\dist\dist\wwwroot\sample-data\weather.json
+C:\Users\nsmbh\Projects\EventEaseApp\bin\Debug\net8.0\dist\dist\dist\wwwroot\_framework\blazor.boot.json

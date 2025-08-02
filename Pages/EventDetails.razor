@@ -1,14 +1,13 @@
 @page "/eventdetails/{id:int}"
 @using EventEaseApp.Models
 @using EventEaseApp.Services
+@inject EventService EventService
 
 
 @if (selectedEvent != null)
 {
     <div class="event-details-container">
         <h1 class="event-details-title">Event Details</h1>
-
-        @*<EventCard Event="selectedEvent" />*@
 
         <div class="event-info">
             <h2>@selectedEvent.Name</h2>
@@ -59,38 +58,6 @@ else
     
     protected override void OnInitialized()
     {
-        var events = new List<EventModel>
-        {
-            new EventModel {
-            Id = 1,
-            Name = "Tech Conference",
-            Date = new DateTime(2025, 6, 15),
-            Location = "Cape Town",
-            Description = "Join top minds in tech for talks and networking.",
-            Tags = new() { "Tech", "Conference", "Innovation" }, 
-            Category = "Technology"
-            },
-        new EventModel {
-            Id = 2,
-            Name = "Art Festival",
-            Date = new DateTime(2025, 7, 20),
-            Location = "Johannesburg",
-            Description = "Experience creativity in bloom, connect with visionary artists and explore captivating exhibitions",
-            Tags = new() { "Art", "Showcase", "Exhibition"},
-            Category = "Art"
-            },
-        new EventModel {
-            Id = 3,
-            Name = "Swan Lake",
-            Date = new DateTime(2025, 8, 9),
-            Location = "Durban",
-            Description = "Experience the magic of Swan Lake. Witness breathtaking ballet, enchanting music and a timeless tale of love and transformation come to life on stage.",
-            Tags = new() { "Ballet", "Dance", "Play"},
-            Category = "Theatre"
-            }
-        };
-
-
-        selectedEvent = events.FirstOrDefault(e => e.Id == id);
+        selectedEvent = EventService.GetEventById(id);
     }
 }

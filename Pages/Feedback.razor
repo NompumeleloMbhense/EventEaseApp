@@ -6,21 +6,24 @@
 
     <EditForm Model="feedback" OnValidSubmit="HandleSubmit">
         <DataAnnotationsValidator />
-        <ValidationSummary class="error-summary" />
+        
 
         <div class="form-group">
             <label class="form-label">Name:</label>
             <InputText @bind-Value="feedback.Name" class="form-input" />
+            <ValidationMessage For="@(() => feedback.Name)" class="field-error"/>
         </div>
 
         <div class="form-group">
             <label class="form-label">Email:</label>
             <InputText @bind-Value="feedback.Email" class="form-input" />
+            <ValidationMessage For="@(() => feedback.Email)" class="field-error"/>
         </div>
 
         <div class="form-group">
             <label class="form-label">Message:</label>
             <InputTextArea @bind-Value="feedback.Message" class="form-input" rows="5" />
+            <ValidationMessage For="@(() => feedback.Message)" class="field-error"/>
         </div>
 
         <button type="submit" class="submit-btn">Send Feedback</button>

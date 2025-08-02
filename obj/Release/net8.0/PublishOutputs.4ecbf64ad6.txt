@@ -1,4 +1,6 @@
 C:\Users\nsmbh\Projects\EventEaseApp\dist\dist\web.config
+C:\Users\nsmbh\Projects\EventEaseApp\dist\dist\dist\wwwroot\sample-data\weather.json
+C:\Users\nsmbh\Projects\EventEaseApp\dist\dist\dist\wwwroot\_framework\blazor.boot.json
 C:\Users\nsmbh\Projects\EventEaseApp\dist\dist\wwwroot\sample-data\weather.json
 C:\Users\nsmbh\Projects\EventEaseApp\dist\dist\wwwroot\_framework\blazor.boot.json
 C:\Users\nsmbh\Projects\EventEaseApp\dist\web.config

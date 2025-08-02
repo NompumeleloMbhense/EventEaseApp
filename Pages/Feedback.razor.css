@@ -71,6 +71,12 @@
     transform: translateY(0);
 }
 
+.field-error {
+  color: #a94442;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 .success-msg {
   margin-top: 1.5rem;
   color: #2e7d32;

@@ -40,6 +40,12 @@ input[class*="form-input"]:focus {
   outline: none;
 }
 
+.field-error {
+  color: #a94442;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 body {
   background-color: palevioletred;
 }

@@ -1,5 +1,7 @@
 @page "/events"
 @using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventService EventService
 
 <input type="text" @bind="searchTerm" placeholder="Search by name or location" class="form-control mb-4" />
 
@@ -14,12 +16,14 @@
         }
     </div>
 
-    @if(TotalPages > 1)
+    @if (TotalPages > 1)
     {
         <div class="pagination-controls">
-            <button class="btn btn-outline-secondary" @onclick="PreviousPage" disabled="@(_currentPage == 1)">← Previous</button>
-            <span class="page-info" >Page @_currentPage of @TotalPages</span>
-            <button class="btn btn-outline-secondary" @onclick="NextPage" disabled="@(_currentPage == TotalPages)">Next →</button>
+            <button class="btn btn-outline-secondary" @onclick="PreviousPage" disabled="@(_currentPage == 1)">←
+                Previous</button>
+            <span class="page-info">Page @_currentPage of @TotalPages</span>
+            <button class="btn btn-outline-secondary" @onclick="NextPage" disabled="@(_currentPage == TotalPages)">Next
+                →</button>
         </div>
     }
 </div>
@@ -30,39 +34,12 @@
     private string searchTerm = "";
     private int _currentPage = 1;
     private int _pageSize = 5;
-    private List<EventModel> eventList = new()
+    private List<EventModel> eventList = new();
+
+    protected override void OnInitialized()
     {
-        new EventModel {
-            Id = 1,
-            Name = "Tech Conference",
-            Date = new DateTime(2025, 6, 15),
-            Location = "Cape Town",
-            Description = "Join top minds in tech for talks and networking.",
-            Tags = new() { "Tech", "Conference", "Innovation" }, 
-            Category = "Technology"
-            },
-        new EventModel {
-            Id = 2,
-            Name = "Art Festival",
-            Date = new DateTime(2025, 7, 20),
-            Location = "Johannesburg",
-            Description = "Experience creativity in bloom, connect with visionary artists and explore captivating exhibitions",
-            Tags = new() { "Art", "Showcase", "Exhibition"},
-            Category = "Art"
-            },
-        new EventModel {
-            Id = 3,
-            Name = "Swan Lake",
-            Date = new DateTime(2025, 8, 9),
-            Location = "Durban",
-            Description = "Experience the magic of Swan Lake. Witness breathtaking ballet, enchanting music and a timeless tale of love and transformation come to life on stage.",
-            Tags = new() { "Ballet", "Dance", "Play"},
-            Category = "Theatre"
-            },
-            new EventModel { Id = 4, Name = "Design Expo", Date = DateTime.Now.AddDays(20), Location = "Pretoria" },
-            new EventModel { Id = 5, Name = "Startup Grind", Date = DateTime.Now.AddDays(30), Location = "Cape Town" },
-            new EventModel { Id = 6, Name = "Food & Wine Fest", Date = DateTime.Now.AddDays(40), Location = "Stellenbosch" }
-    };
+        eventList = EventService.GetAllEvents();
+    }
 
     private IEnumerable<EventModel> FilteredEvents =>
     string.IsNullOrWhiteSpace(searchTerm)
@@ -72,10 +49,10 @@
 
     private int TotalPages => (int)Math.Ceiling(FilteredEvents.Count() / (double)_pageSize);
 
-    private IEnumerable<EventModel> PagedEvents => 
-        FilteredEvents
-        .Skip((_currentPage - 1) * _pageSize)
-        .Take(_pageSize);
+    private IEnumerable<EventModel> PagedEvents =>
+    FilteredEvents
+    .Skip((_currentPage - 1) * _pageSize)
+    .Take(_pageSize);
 
     private void NextPage()
     {

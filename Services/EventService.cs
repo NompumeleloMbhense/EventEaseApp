@@ -7,16 +7,19 @@ namespace EventEaseApp.Services
 {
     public class EventService
     {
-        private readonly List<EventModel> _events = new();
-        private int _nextId = 1;
-
-        public EventService()
+        private List<EventModel> _events = new()
         {
-            _events.Add(new EventModel { Id = _nextId++, Name = "Tech Conference", Date = new DateTime(2025, 6, 15), Location = "Cape Town" });
-            _events.Add(new EventModel { Id = _nextId++, Name = "Art Festival", Date = new DateTime(2025, 7, 20), Location = "Johannesburg" });
-        }
+            new EventModel { Id = 1, Name = "Tech Conference", Date = new(2025, 6, 15), Location = "Cape Town", Description = "Join top minds in tech for talks and networking", Tags = new() { "Tech", "Conference", "Innovation" }, Category = "Technology" },
+            new EventModel { Id = 2, Name = "Art Festival", Date = new(2025, 7, 20), Location = "Johannesburg", Description = "Experience creativity in bloom and connect with visionary artists", Tags = new() { "Art", "Showcase", "Exhibition"}, Category = "Art" },
+            new EventModel { Id = 3, Name = "Swan Lake", Date = new(2025, 8, 9), Location = "Durban", Description = "Experience the magic of Swan Lake. Witness breathtaking ballet, enchanting music and a timeless tale of love", Tags = new() { "Ballet", "Dance", "Play"}, Category = "Theatre" },
+            new EventModel { Id = 4, Name = "Design Expo", Date = DateTime.Now.AddDays(20), Location = "Pretoria" },
+            new EventModel { Id = 5, Name = "Startup Grind", Date = DateTime.Now.AddDays(30), Location = "Cape Town" },
+            new EventModel { Id = 6, Name = "Food & Wine Fest", Date = DateTime.Now.AddDays(40), Location = "Stellenbosch" }
+        };
+        
 
-        public List<EventModel> GetEvents() => _events;
+        
+        public List<EventModel> GetAllEvents() => _events;
 
         public EventModel? GetEventById(int id) => _events.FirstOrDefault(e => e.Id == id);
 
